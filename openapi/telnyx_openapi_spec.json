@@ -20174,7 +20174,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/reports/batch_mdr_reports": {
+    "/v2/reports/batch_mdr_reports": {
       "get": {
         "tags": [
           "MDR Detail Reports"
@@ -20259,7 +20259,7 @@
         "x-latency-category": "background"
       }
     },
-    "/reports/batch_mdr_reports/{id}": {
+    "/v2/reports/batch_mdr_reports/{id}": {
       "delete": {
         "tags": [
           "MDR Detail Reports"
@@ -20341,7 +20341,7 @@
         "x-latency-category": "interactive"
       }
     },
-    "/reports/cdr_usage_reports/sync": {
+    "/v2/reports/cdr_usage_reports/sync": {
       "get": {
         "tags": [
           "CDR Usage Reports"
@@ -20370,7 +20370,7 @@
           {
             "name": "aggregation_type",
             "in": "query",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string",
               "example": "no_aggregation",
@@ -20385,7 +20385,7 @@
           {
             "name": "product_breakdown",
             "in": "query",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string",
               "example": "no_breakdown",
@@ -20430,7 +20430,7 @@
         "x-latency-category": "background"
       }
     },
-    "/reports/mdr_usage_reports": {
+    "/v2/reports/mdr_usage_reports": {
       "get": {
         "tags": [
           "MDR Usage Reports"
@@ -20515,7 +20515,7 @@
         "x-latency-category": "background"
       }
     },
-    "/reports/mdr_usage_reports/sync": {
+    "/v2/reports/mdr_usage_reports/sync": {
       "get": {
         "tags": [
           "MDR Usage Reports"
@@ -20588,7 +20588,7 @@
         "x-latency-category": "background"
       }
     },
-    "/reports/mdr_usage_reports/{id}": {
+    "/v2/reports/mdr_usage_reports/{id}": {
       "delete": {
         "tags": [
           "MDR Usage Reports"
@@ -20670,7 +20670,7 @@
         "x-latency-category": "interactive"
       }
     },
-    "/reports/mdrs": {
+    "/v2/reports/mdrs": {
       "get": {
         "tags": [
           "MDR Detail Reports"
@@ -20795,7 +20795,7 @@
         "x-latency-category": "interactive"
       }
     },
-    "/reports/wdrs": {
+    "/v2/reports/wdrs": {
       "get": {
         "tags": [
           "WDR Detail Reports"
@@ -20942,7 +20942,7 @@
         "x-latency-category": "interactive"
       }
     },
-    "/requirement_types": {
+    "/v2/requirement_types": {
       "get": {
         "summary": "List all requirement types",
         "description": "List all requirement types ordered by created_at descending",
@@ -20969,7 +20969,7 @@
         }
       }
     },
-    "/requirement_types/{id}": {
+    "/v2/requirement_types/{id}": {
       "get": {
         "summary": "Retrieve a requirement types",
         "description": "Retrieve a requirement type by id",
@@ -20977,6 +20977,57 @@
         "x-latency-category": "responsive",
         "tags": [
           "Requirement Types"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/DocReqsRequirementTypeId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/DocReqsRequirementTypeResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/GenericErrorResponse"
+          }
+        }
+      }
+    },
+    "/v2/requirements": {
+      "get": {
+        "summary": "List all requirement",
+        "description": "List all requirements ordered by created_at descending",
+        "operationId": "docReqsListRequirements",
+        "x-latency-category": "responsive",
+        "tags": [
+          "Requirements"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/DocReqsRequirementTypeNameFilter"
+          },
+          {
+            "$ref": "#/components/parameters/DocReqsRequirementTypesSort"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/DocReqsListRequirementTypesResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/GenericErrorResponse"
+          }
+        }
+      }
+    },
+    "/v2/requirements/{id}": {
+      "get": {
+        "summary": "Retrieve a requirements",
+        "description": "Retrieve a requirement by id",
+        "operationId": "docReqsRetrieveRequirementType",
+        "x-latency-category": "responsive",
+        "tags": [
+          "Requirements"
         ],
         "parameters": [
           {
@@ -21969,19 +22020,16 @@
           "Room Sessions"
         ],
         "security": [],
-        "parameters": [
-          {
-            "name": "room_session_id",
-            "in": "path",
-            "description": "The unique identifier of a room session.",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid",
-              "example": "0ccc7b54-4df3-4bca-a65a-3da1ecc777f0"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/parameters/ResourceId"
+              }
             }
-          }
-        ],
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "$ref": "#/components/responses/ActionSuccessResponse"
@@ -22905,7 +22953,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/sim_card_data_usage_notifications": {
+    "/v2/sim_card_data_usage_notifications": {
       "get": {
         "operationId": "ListSimCardDataUsageNotifications",
         "summary": "List SIM card data usage notifications",
@@ -22993,7 +23041,7 @@
         "x-latency-category": "background"
       }
     },
-    "/sim_card_data_usage_notifications/{id}": {
+    "/v2/sim_card_data_usage_notifications/{id}": {
       "delete": {
         "operationId": "SimCardDataUsageNotificationsDelete",
         "summary": "Delete SIM card data usage notifications",
@@ -23074,7 +23122,7 @@
         "x-latency-category": "background"
       }
     },
-    "/sim_card_group_actions": {
+    "/v2/sim_card_group_actions": {
       "get": {
         "operationId": "SimCardGroupActionsGet",
         "summary": "List SIM card group actions",
@@ -23121,7 +23169,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/sim_card_group_actions/{id}": {
+    "/v2/sim_card_group_actions/{id}": {
       "get": {
         "operationId": "SimCardGroupActionGet",
         "summary": "Get SIM card group action details",
@@ -23145,7 +23193,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/sim_card_groups": {
+    "/v2/sim_card_groups": {
       "get": {
         "tags": [
           "SIM Card Groups"
@@ -23219,7 +23267,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/sim_card_groups/{id}": {
+    "/v2/sim_card_groups/{id}": {
       "delete": {
         "tags": [
           "SIM Card Groups"
@@ -23297,7 +23345,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/sim_card_groups/{id}/actions/remove_private_wireless_gateway": {
+    "/v2/sim_card_groups/{id}/actions/remove_private_wireless_gateway": {
       "post": {
         "x-latency-category": "background",
         "summary": "Request Private Wireless Gateway removal from SIM card group",
@@ -23306,11 +23354,16 @@
         "tags": [
           "SIM Card Groups"
         ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/ResourceId"
-          }
-        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/parameters/ResourceId"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "202": {
             "$ref": "#/components/responses/SIMCardGroupActionResponse"
@@ -23321,7 +23374,7 @@
         }
       }
     },
-    "/sim_card_groups/{id}/actions/set_private_wireless_gateway": {
+    "/v2/sim_card_groups/{id}/actions/set_private_wireless_gateway": {
       "post": {
         "x-latency-category": "background",
         "summary": "Request Private Wireless Gateway assignment for SIM card group",
@@ -23412,7 +23465,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/sim_card_orders": {
+    "/v2/sim_card_orders": {
       "get": {
         "summary": "Get all SIM card orders",
         "description": "Get all SIM card orders according to filters.",
@@ -23502,7 +23555,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/sim_card_orders/{id}": {
+    "/v2/sim_card_orders/{id}": {
       "get": {
         "summary": "Get a single SIM card order",
         "description": "Get a single SIM card order by its ID.",
@@ -23846,11 +23899,16 @@
         "tags": [
           "SIM Cards"
         ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/ResourceId"
-          }
-        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/parameters/ResourceId"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "202": {
             "$ref": "#/components/responses/SIMCardActionResponse"
@@ -23924,11 +23982,16 @@
           "SIM Cards"
         ],
         "x-latency-category": "background",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/ResourceId"
-          }
-        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/parameters/ResourceId"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "202": {
             "$ref": "#/components/responses/SIMCardActionResponse"
@@ -23948,11 +24011,16 @@
         "tags": [
           "SIM Cards"
         ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/ResourceId"
-          }
-        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/parameters/ResourceId"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "202": {
             "$ref": "#/components/responses/SIMCardActionResponse"
@@ -23975,11 +24043,16 @@
         "tags": [
           "SIM Cards"
         ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/ResourceId"
-          }
-        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/parameters/ResourceId"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "202": {
             "$ref": "#/components/responses/SIMCardActionResponse"
@@ -24596,30 +24669,37 @@
         "tags": [
           "Credentials"
         ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Identifies the resource.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "action",
-            "in": "path",
-            "description": "Identifies the action to be taken.",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "activate",
-                "deactivate"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "description": "Identifies the resource.",
+                  "required": true,
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "name": "action",
+                  "in": "path",
+                  "description": "Identifies the action to be taken.",
+                  "required": true,
+                  "schema": {
+                    "type": "string",
+                    "enum": [
+                      "activate",
+                      "deactivate"
+                    ]
+                  }
+                }
               ]
             }
-          }
-        ],
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "$ref": "#/components/responses/TelephonyCredentialResponse"
@@ -64240,7 +64320,7 @@
           },
           "tracking_url": {
             "type": "string",
-            "format": "url",
+            "format": "http://www.example.com/",
             "description": "The URL used to get tracking information about the order.",
             "example": "http://www.example.com/"
           },
@@ -72126,7 +72206,7 @@
         "title": "Webhook Event Failover URL",
         "description": "The failover URL where webhooks related to this connection will be sent if sending to the primary URL fails. Must include a scheme, such as 'https'.",
         "type": "string",
-        "format": "url",
+        "format": "https://failover.example.com",
         "default": "",
         "nullable": true,
         "example": "https://failover.example.com"
