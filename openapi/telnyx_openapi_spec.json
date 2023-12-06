@@ -1203,7 +1203,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/ai/embeddings": {
+    "/v2/ai/embeddings": {
       "post": {
         "tags": [
           "Public Endpoints"
@@ -1246,7 +1246,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/ai/embeddings/buckets": {
+    "/v2/ai/embeddings/buckets": {
       "get": {
         "tags": [
           "Public Endpoints"
@@ -1366,7 +1366,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/ai/embeddings/{task_id}": {
+    "/v2/ai/embeddings/{task_id}": {
       "get": {
         "tags": [
           "Public Endpoints"
@@ -1410,7 +1410,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/ai/generate": {
+    "/v2/ai/generate": {
       "post": {
         "tags": [
           "Public Endpoints"
@@ -1506,7 +1506,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/ai/summarize": {
+    "/v2/ai/summarize": {
       "post": {
         "tags": [
           "Public Endpoints"
@@ -3011,7 +3011,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/business_identities": {
+    "/v2/business_identities": {
       "get": {
         "summary": "Lists the Business Identities owned by the current user/organization",
         "operationId": "listBusinessIdentities",
@@ -3066,7 +3066,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/business_identities/{id}": {
+    "/v2/business_identities/{id}": {
       "delete": {
         "summary": "Delete a Business Identity",
         "description": "Deletes the Business Identity. This action will fail if any verification requests have been made for any associated Display Profile. Please contact support@telnyx.com in case you want to delete a Business Identity in that situation.",
@@ -3359,7 +3359,7 @@
         "x-latency-category": "interactive"
       }
     },
-    "/call_events": {
+    "/v2/call_events": {
       "get": {
         "summary": "List call events",
         "description": "Filters call events by given filter parameters. Events are ordered by `event_timestamp`. If filter for `call_leg_id` or `call_session_id` is not present, it only filters events from the last 24 hours.\n\n**Note**: Only one `filter[event_timestamp]` can be passed.\n",
@@ -8396,7 +8396,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/detail_records": {
+    "/v2/detail_records": {
       "get": {
         "tags": [
           "Detail Records"
@@ -8409,7 +8409,7 @@
             "name": "filter[record_type]",
             "in": "query",
             "description": "Filter by the given record type.",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string",
               "enum": [
@@ -12079,7 +12079,7 @@
         }
       }
     },
-    "/managed_accounts": {
+    "/v2/managed_accounts": {
       "get": {
         "summary": "Lists accounts managed by the current user.",
         "description": "Lists the accounts managed by the current user. Users need to be explictly approved by Telnyx in order to become manager accounts.",
@@ -12158,7 +12158,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/managed_accounts/allocatable_global_outbound_channels": {
+    "/v2/managed_accounts/allocatable_global_outbound_channels": {
       "get": {
         "summary": "Display information about allocatable global outbound channels for the current user.",
         "description": "Display information about allocatable global outbound channels for the current user. Only usable by account managers.",
@@ -12181,7 +12181,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/managed_accounts/{id}": {
+    "/v2/managed_accounts/{id}": {
       "get": {
         "description": "Retrieves the details of a single managed account.",
         "summary": "Retrieve a managed account",
@@ -12259,7 +12259,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/managed_accounts/{id}/actions/disable": {
+    "/v2/managed_accounts/{id}/actions/disable": {
       "post": {
         "summary": "Disables a managed account",
         "description": "Disables a managed account, forbidding it to use Telnyx services, including sending or receiving phone calls and SMS messages. Ongoing phone calls will not be affected. The managed account and its sub-users will no longer be able to log in via the mission control portal.",
@@ -12295,7 +12295,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/managed_accounts/{id}/actions/enable": {
+    "/v2/managed_accounts/{id}/actions/enable": {
       "post": {
         "summary": "Enables a managed account",
         "description": "Enables a managed account and its sub-users to use Telnyx services.",
@@ -12331,7 +12331,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/managed_accounts/{id}/update_global_channel_limit": {
+    "/v2/managed_accounts/{id}/update_global_channel_limit": {
       "patch": {
         "summary": "Update the amount of allocatable global outbound channels allocated to a specific managed account.",
         "description": "Update the amount of allocatable global outbound channels allocated to a specific managed account.",
@@ -12785,7 +12785,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/messaging_hosted_number_orders": {
+    "/v2/messaging_hosted_number_orders": {
       "get": {
         "summary": "List messaging hosted number orders",
         "operationId": "listMessagingHostedNumberOrder",
@@ -12838,7 +12838,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/messaging_hosted_number_orders/{id}": {
+    "/v2/messaging_hosted_number_orders/{id}": {
       "get": {
         "summary": "Retrieve a messaging hosted number order",
         "operationId": "retrieveMessagingHostedNumberOrder",
@@ -12914,7 +12914,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/messaging_hosted_numbers/{id}": {
+    "/v2/messaging_hosted_numbers/{id}": {
       "delete": {
         "summary": "Delete a messaging hosted number",
         "operationId": "deleteMessagingHostedNumber",
@@ -13635,7 +13635,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/messaging_tollfree/verification/requests": {
+    "/v2/messaging_tollfree/verification/requests": {
       "get": {
         "tags": [
           "Messaging Tollfree Verification"
@@ -13645,7 +13645,7 @@
         "operationId": "ListVerificationRequests",
         "parameters": [
           {
-            "required": true,
+            "required": false,
             "schema": {
               "title": "Page",
               "minimum": 1.0,
@@ -13656,7 +13656,7 @@
           },
           {
             "description": "\n        Request this many records per page\n\n        This value is automatically clamped if the provided value is too large.\n        ",
-            "required": true,
+            "required": false,
             "schema": {
               "title": "Page Size",
               "minimum": 1.0,
@@ -13757,7 +13757,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/messaging_tollfree/verification/requests/{id}": {
+    "/v2/messaging_tollfree/verification/requests/{id}": {
       "delete": {
         "tags": [
           "Messaging Tollfree Verifications"
@@ -13875,7 +13875,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/messaging_url_domains": {
+    "/v2/messaging_url_domains": {
       "get": {
         "summary": "List messaging URL domains",
         "operationId": "listMessagingUrlDomains",
@@ -14009,7 +14009,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/mobile_push_credentials": {
+    "/v2/mobile_push_credentials": {
       "get": {
         "tags": [
           "Push Credentials"
@@ -14132,7 +14132,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/mobile_push_credentials/{push_credential_id}": {
+    "/v2/mobile_push_credentials/{push_credential_id}": {
       "delete": {
         "tags": [
           "Push Credentials"
@@ -15229,7 +15229,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/number_block_orders": {
+    "/v2/number_block_orders": {
       "get": {
         "summary": "List number block orders",
         "description": "Get a paginated list of number block orders.",
@@ -15342,7 +15342,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/number_block_orders/{number_block_order_id}": {
+    "/v2/number_block_orders/{number_block_order_id}": {
       "get": {
         "summary": "Retrieve a number block order",
         "description": "Get an existing phone number block order.",
@@ -16820,7 +16820,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/phone_number_blocks/jobs": {
+    "/v2/phone_number_blocks/jobs": {
       "get": {
         "summary": "Lists the phone number blocks jobs",
         "operationId": "listPhoneNumberBlocksJobs",
@@ -16889,7 +16889,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/phone_number_blocks/jobs/delete_phone_number_block": {
+    "/v2/phone_number_blocks/jobs/delete_phone_number_block": {
       "post": {
         "x-latency-category": "background",
         "summary": "Deletes all numbers associated with a phone number block",
@@ -16932,7 +16932,7 @@
         }
       }
     },
-    "/phone_number_blocks/jobs/{id}": {
+    "/v2/phone_number_blocks/jobs/{id}": {
       "get": {
         "summary": "Retrieves a phone number blocks job",
         "operationId": "retrievePhoneNumberBlocksJob",
@@ -17405,9 +17405,35 @@
           "CSV Downloads"
         ],
         "x-endpoint-cost": "medium",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CsvDownload"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
-            "$ref": "#/components/responses/CsvDownloadResponse"
+            "description": "Successful response with details about a CSV download.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "CSV Download Response",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "items": {
+                        "$ref": "#/components/schemas/CsvDownload"
+                      }
+                    }
+                  }
+                }
+              }
+            }
           },
           "default": {
             "$ref": "#/components/responses/GenericErrorResponse"
@@ -17437,7 +17463,23 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/CsvDownloadResponse"
+            "description": "Successful response with details about a CSV download.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "CSV Download Response",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "items": {
+                        "$ref": "#/components/schemas/CsvDownload"
+                      }
+                    }
+                  }
+                }
+              }
+            }
           },
           "default": {
             "$ref": "#/components/responses/GenericErrorResponse"
@@ -17460,22 +17502,20 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "type": "object",
-                      "properties": {
-                        "channels": {
-                          "type": "integer",
-                          "description": "The current number of concurrent channels set for the account",
-                          "example": 7
-                        },
-                        "record_type": {
-                          "description": "Identifies the type of the response",
-                          "type": "string",
-                          "example": "inbound_channels"
-                        }
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "channels": {
+                        "type": "integer",
+                        "description": "The current number of concurrent channels set for the account",
+                        "example": 7
+                      },
+                      "record_type": {
+                        "description": "Identifies the type of the response",
+                        "type": "string",
+                        "example": "inbound_channels"
                       }
+                    
                     }
                   }
                 }
@@ -19608,7 +19648,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/private_wireless_gateways": {
+    "/v2/private_wireless_gateways": {
       "get": {
         "summary": "Get all Private Wireless Gateways",
         "description": "Get all Private Wireless Gateways belonging to the user.",
@@ -19732,7 +19772,7 @@
         "x-latency-category": "background"
       }
     },
-    "/private_wireless_gateways/{id}": {
+    "/v2/private_wireless_gateways/{id}": {
       "delete": {
         "summary": "Delete a Private Wireless Gateway",
         "description": "Deletes the Private Wireless Gateway.",
@@ -19784,7 +19824,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/public_internet_gateways": {
+    "/v2/public_internet_gateways": {
       "get": {
         "summary": "List all Public Internet Gateways",
         "description": "List all Public Internet Gateways.",
@@ -19851,7 +19891,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/public_internet_gateways/{id}": {
+    "/v2/public_internet_gateways/{id}": {
       "delete": {
         "summary": "Delete a Public Internet Gateway",
         "description": "Delete a Public Internet Gateway.",
@@ -19996,7 +20036,7 @@
         "x-latency-category": "interactive"
       }
     },
-    "/recordings": {
+    "/v2/recordings": {
       "get": {
         "description": "Lists recordings for the authenticated user",
         "summary": "List recordings",
@@ -20076,7 +20116,7 @@
         "Call Recordings"
       ]
     },
-    "/recordings/{id}": {
+    "/v2/recordings/{id}": {
       "get": {
         "description": "Retrieve a recording from the authenticated user's recordings",
         "summary": "Retrieve a recording",
@@ -20109,7 +20149,7 @@
         "x-latency-category": "interactive"
       }
     },
-    "/recordings/{recording_id}": {
+    "/v2/recordings/{recording_id}": {
       "delete": {
         "summary": "Delete a call recording",
         "description": "Permanently deletes a call recording.",
@@ -20174,7 +20214,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/reports/batch_mdr_reports": {
+    "/v2/reports/batch_mdr_reports": {
       "get": {
         "tags": [
           "MDR Detail Reports"
@@ -20259,7 +20299,7 @@
         "x-latency-category": "background"
       }
     },
-    "/reports/batch_mdr_reports/{id}": {
+    "/v2/reports/batch_mdr_reports/{id}": {
       "delete": {
         "tags": [
           "MDR Detail Reports"
@@ -20341,7 +20381,7 @@
         "x-latency-category": "interactive"
       }
     },
-    "/reports/cdr_usage_reports/sync": {
+    "/v2/reports/cdr_usage_reports/sync": {
       "get": {
         "tags": [
           "CDR Usage Reports"
@@ -20370,7 +20410,7 @@
           {
             "name": "aggregation_type",
             "in": "query",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string",
               "example": "no_aggregation",
@@ -20385,7 +20425,7 @@
           {
             "name": "product_breakdown",
             "in": "query",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string",
               "example": "no_breakdown",
@@ -20430,7 +20470,7 @@
         "x-latency-category": "background"
       }
     },
-    "/reports/mdr_usage_reports": {
+    "/v2/reports/mdr_usage_reports": {
       "get": {
         "tags": [
           "MDR Usage Reports"
@@ -20515,7 +20555,7 @@
         "x-latency-category": "background"
       }
     },
-    "/reports/mdr_usage_reports/sync": {
+    "/v2/reports/mdr_usage_reports/sync": {
       "get": {
         "tags": [
           "MDR Usage Reports"
@@ -20588,7 +20628,7 @@
         "x-latency-category": "background"
       }
     },
-    "/reports/mdr_usage_reports/{id}": {
+    "/v2/reports/mdr_usage_reports/{id}": {
       "delete": {
         "tags": [
           "MDR Usage Reports"
@@ -20670,7 +20710,7 @@
         "x-latency-category": "interactive"
       }
     },
-    "/reports/mdrs": {
+    "/v2/reports/mdrs": {
       "get": {
         "tags": [
           "MDR Detail Reports"
@@ -20795,7 +20835,7 @@
         "x-latency-category": "interactive"
       }
     },
-    "/reports/wdrs": {
+    "/v2/reports/wdrs": {
       "get": {
         "tags": [
           "WDR Detail Reports"
@@ -20942,7 +20982,7 @@
         "x-latency-category": "interactive"
       }
     },
-    "/requirement_types": {
+    "/v2/requirement_types": {
       "get": {
         "summary": "List all requirement types",
         "description": "List all requirement types ordered by created_at descending",
@@ -20969,7 +21009,7 @@
         }
       }
     },
-    "/requirement_types/{id}": {
+    "/v2/requirement_types/{id}": {
       "get": {
         "summary": "Retrieve a requirement types",
         "description": "Retrieve a requirement type by id",
@@ -20977,6 +21017,57 @@
         "x-latency-category": "responsive",
         "tags": [
           "Requirement Types"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/DocReqsRequirementTypeId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/DocReqsRequirementTypeResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/GenericErrorResponse"
+          }
+        }
+      }
+    },
+    "/v2/requirements": {
+      "get": {
+        "summary": "List all requirement",
+        "description": "List all requirements ordered by created_at descending",
+        "operationId": "docReqsListRequirements",
+        "x-latency-category": "responsive",
+        "tags": [
+          "Requirements"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/DocReqsRequirementTypeNameFilter"
+          },
+          {
+            "$ref": "#/components/parameters/DocReqsRequirementTypesSort"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/DocReqsListRequirementTypesResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/GenericErrorResponse"
+          }
+        }
+      }
+    },
+    "/v2/requirements/{id}": {
+      "get": {
+        "summary": "Retrieve a requirements",
+        "description": "Retrieve a requirement by id",
+        "operationId": "docReqsRetrieveRequirementType",
+        "x-latency-category": "responsive",
+        "tags": [
+          "Requirements"
         ],
         "parameters": [
           {
@@ -21969,19 +22060,16 @@
           "Room Sessions"
         ],
         "security": [],
-        "parameters": [
-          {
-            "name": "room_session_id",
-            "in": "path",
-            "description": "The unique identifier of a room session.",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid",
-              "example": "0ccc7b54-4df3-4bca-a65a-3da1ecc777f0"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/parameters/ResourceId"
+              }
             }
-          }
-        ],
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "$ref": "#/components/responses/ActionSuccessResponse"
@@ -22736,7 +22824,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/short_codes": {
+    "/v2/short_codes": {
       "get": {
         "summary": "List short codes",
         "operationId": "listShortCodes",
@@ -22771,7 +22859,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/short_codes/{id}": {
+    "/v2/short_codes/{id}": {
       "get": {
         "summary": "Retrieve a short code",
         "operationId": "retrieveShortCode",
@@ -22905,7 +22993,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/sim_card_data_usage_notifications": {
+    "/v2/sim_card_data_usage_notifications": {
       "get": {
         "operationId": "ListSimCardDataUsageNotifications",
         "summary": "List SIM card data usage notifications",
@@ -22993,7 +23081,7 @@
         "x-latency-category": "background"
       }
     },
-    "/sim_card_data_usage_notifications/{id}": {
+    "/v2/sim_card_data_usage_notifications/{id}": {
       "delete": {
         "operationId": "SimCardDataUsageNotificationsDelete",
         "summary": "Delete SIM card data usage notifications",
@@ -23074,7 +23162,7 @@
         "x-latency-category": "background"
       }
     },
-    "/sim_card_group_actions": {
+    "/v2/sim_card_group_actions": {
       "get": {
         "operationId": "SimCardGroupActionsGet",
         "summary": "List SIM card group actions",
@@ -23121,7 +23209,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/sim_card_group_actions/{id}": {
+    "/v2/sim_card_group_actions/{id}": {
       "get": {
         "operationId": "SimCardGroupActionGet",
         "summary": "Get SIM card group action details",
@@ -23145,7 +23233,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/sim_card_groups": {
+    "/v2/sim_card_groups": {
       "get": {
         "tags": [
           "SIM Card Groups"
@@ -23219,7 +23307,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/sim_card_groups/{id}": {
+    "/v2/sim_card_groups/{id}": {
       "delete": {
         "tags": [
           "SIM Card Groups"
@@ -23297,7 +23385,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/sim_card_groups/{id}/actions/remove_private_wireless_gateway": {
+    "/v2/sim_card_groups/{id}/actions/remove_private_wireless_gateway": {
       "post": {
         "x-latency-category": "background",
         "summary": "Request Private Wireless Gateway removal from SIM card group",
@@ -23306,11 +23394,16 @@
         "tags": [
           "SIM Card Groups"
         ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/ResourceId"
-          }
-        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/parameters/ResourceId"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "202": {
             "$ref": "#/components/responses/SIMCardGroupActionResponse"
@@ -23321,7 +23414,7 @@
         }
       }
     },
-    "/sim_card_groups/{id}/actions/set_private_wireless_gateway": {
+    "/v2/sim_card_groups/{id}/actions/set_private_wireless_gateway": {
       "post": {
         "x-latency-category": "background",
         "summary": "Request Private Wireless Gateway assignment for SIM card group",
@@ -23412,7 +23505,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/sim_card_orders": {
+    "/v2/sim_card_orders": {
       "get": {
         "summary": "Get all SIM card orders",
         "description": "Get all SIM card orders according to filters.",
@@ -23502,7 +23595,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/sim_card_orders/{id}": {
+    "/v2/sim_card_orders/{id}": {
       "get": {
         "summary": "Get a single SIM card order",
         "description": "Get a single SIM card order by its ID.",
@@ -23846,11 +23939,16 @@
         "tags": [
           "SIM Cards"
         ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/ResourceId"
-          }
-        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/parameters/ResourceId"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "202": {
             "$ref": "#/components/responses/SIMCardActionResponse"
@@ -23924,11 +24022,16 @@
           "SIM Cards"
         ],
         "x-latency-category": "background",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/ResourceId"
-          }
-        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/parameters/ResourceId"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "202": {
             "$ref": "#/components/responses/SIMCardActionResponse"
@@ -23948,11 +24051,16 @@
         "tags": [
           "SIM Cards"
         ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/ResourceId"
-          }
-        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/parameters/ResourceId"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "202": {
             "$ref": "#/components/responses/SIMCardActionResponse"
@@ -23975,11 +24083,16 @@
         "tags": [
           "SIM Cards"
         ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/ResourceId"
-          }
-        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/parameters/ResourceId"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "202": {
             "$ref": "#/components/responses/SIMCardActionResponse"
@@ -24596,30 +24709,37 @@
         "tags": [
           "Credentials"
         ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Identifies the resource.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "action",
-            "in": "path",
-            "description": "Identifies the action to be taken.",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "activate",
-                "deactivate"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "description": "Identifies the resource.",
+                  "required": true,
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "name": "action",
+                  "in": "path",
+                  "description": "Identifies the action to be taken.",
+                  "required": true,
+                  "schema": {
+                    "type": "string",
+                    "enum": [
+                      "activate",
+                      "deactivate"
+                    ]
+                  }
+                }
               ]
             }
-          }
-        ],
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "$ref": "#/components/responses/TelephonyCredentialResponse"
@@ -25650,7 +25770,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/verified_calls_display_profiles": {
+    "/v2/verified_calls_display_profiles": {
       "get": {
         "summary": "Lists the Verified Calls Display Profiles owned by the current user/organization",
         "operationId": "listVerifiedCallsDisplayProfiles",
@@ -25707,7 +25827,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/verified_calls_display_profiles/{id}": {
+    "/v2/verified_calls_display_profiles/{id}": {
       "delete": {
         "summary": "Deletes the Verified Calls Display Profile",
         "description": "Deletes the Verified Calls Display Profile. This action will fail if any verification requests have been made for this Verified Calls Display Profile. Please contact support@telnyx.com in case you want to delete a Verified Calls Display Profile in that situation.",
@@ -25715,17 +25835,16 @@
         "tags": [
           "Verified Calls Display Profile"
         ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Identifies the Verified Calls Display Profile",
-            "required": true,
-            "schema": {
-              "type": "string"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/parameters/ResourceId"
+              }
             }
-          }
-        ],
+          },
+          "required": true
+        },
         "x-group-parameters": "true",
         "x-endpoint-cost": "medium",
         "responses": {
@@ -25808,7 +25927,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/verified_calls_display_profiles/{id}/verification_request": {
+    "/v2/verified_calls_display_profiles/{id}/verification_request": {
       "post": {
         "summary": "Creates a Verification Request",
         "description": "Starts a new Verified Calls Display Profile verification process.",
@@ -25816,17 +25935,16 @@
         "tags": [
           "Verified Calls Display Profile"
         ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Identifies the Verified Calls Display Profile",
-            "required": true,
-            "schema": {
-              "type": "string"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/parameters/ResourceId"
+              }
             }
-          }
-        ],
+          },
+          "required": true
+        },
         "responses": {
           "201": {
             "description": "The Verification Request was issued."
@@ -25838,7 +25956,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/verified_numbers": {
+    "/v2/verified_numbers": {
       "get": {
         "tags": [
           "Verified Numbers"
@@ -25953,7 +26071,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/verified_numbers/{phone_number}": {
+    "/v2/verified_numbers/{phone_number}": {
       "delete": {
         "tags": [
           "Verified Numbers"
@@ -26039,7 +26157,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/verified_numbers/{phone_number}/actions/verify": {
+    "/v2/verified_numbers/{phone_number}/actions/verify": {
       "post": {
         "tags": [
           "Verified Numbers"
@@ -26401,7 +26519,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/virtual_cross_connect_regions": {
+    "/v2/virtual_cross_connect_regions": {
       "get": {
         "summary": "List all Virtual Cross Connect Cloud Regions",
         "description": "List all Virtual Cross Connects Cloud Regions.<br /><br />This endpoint shows which cloud regions are available for the `region_code` your Virtual Cross Connect will be provisioned in.",
@@ -26454,7 +26572,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/virtual_cross_connect_regions/{id}": {
+    "/v2/virtual_cross_connect_regions/{id}": {
       "get": {
         "summary": "Retrieve a Virtual Cross Connect Cloud Regions",
         "description": "Retrieve a Virtual Cross Connect Cloud Regions.",
@@ -26478,7 +26596,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/virtual_cross_connects": {
+    "/v2/virtual_cross_connects": {
       "get": {
         "summary": "List all Virtual Cross Connects",
         "description": "List all Virtual Cross Connects.",
@@ -26545,7 +26663,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/virtual_cross_connects/{id}": {
+    "/v2/virtual_cross_connects/{id}": {
       "delete": {
         "summary": "Delete a Virtual Cross Connect",
         "description": "Delete a Virtual Cross Connect.",
@@ -26626,7 +26744,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/virtual_cross_connects/{id}/actions/provision": {
+    "/v2/virtual_cross_connects/{id}/actions/provision": {
       "post": {
         "summary": "Provision a Virtual Cross Connect",
         "description": "Provision a new Virtual Cross Connect.<br /><br />This endpoint is only necessary for GCE cloud regions. Once you have patched your Cloud IPs, you must POST this request to trigger the provision.",
@@ -26634,11 +26752,16 @@
         "tags": [
           "Virtual Cross Connects"
         ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/ResourceId"
-          }
-        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/parameters/ResourceId"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "202": {
             "$ref": "#/components/responses/VirtualCrossConnectResponse"
@@ -26650,7 +26773,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/webhook_deliveries": {
+    "/v2/webhook_deliveries": {
       "get": {
         "description": "Lists webhook_deliveries for the authenticated user",
         "summary": "List webhook deliveries",
@@ -26764,7 +26887,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/webhook_deliveries/{id}": {
+    "/v2/webhook_deliveries/{id}": {
       "get": {
         "summary": "Find webhook_delivery details by ID",
         "description": "Provides webhook_delivery debug data, such as timestamps, delivery status and attempts.",
@@ -27148,7 +27271,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/wireguard_peers": {
+    "/v2/wireguard_peers": {
       "get": {
         "summary": "List all WireGuard Peers",
         "description": "List all WireGuard peers.",
@@ -27157,9 +27280,6 @@
           "WireGuard Interfaces"
         ],
         "parameters": [
-          {
-            "$ref": "#/components/parameters/ResourceId"
-          },
           {
             "$ref": "#/components/parameters/PageNumber"
           },
@@ -27195,11 +27315,6 @@
         "tags": [
           "WireGuard Interfaces"
         ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/ResourceId"
-          }
-        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -27224,7 +27339,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/wireguard_peers/{id}": {
+    "/v2/wireguard_peers/{id}": {
       "delete": {
         "summary": "Delete the WireGuard Peer",
         "description": "Delete the WireGuard peer.",
@@ -27305,7 +27420,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/wireguard_peers/{id}/allowed_ips": {
+    "/v2/wireguard_peers/{id}/allowed_ips": {
       "get": {
         "summary": "List all Allowed IPs for a WireGuard Peer",
         "description": "List all Allowed IPs for a WireGuard peer.",
@@ -27335,7 +27450,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/wireguard_peers/{id}/allowed_ips/{child_id}": {
+    "/v2/wireguard_peers/{id}/allowed_ips/{child_id}": {
       "get": {
         "summary": "Retrieve the Allowed IP",
         "description": "Retrieve the Allowed IP.",
@@ -27362,7 +27477,7 @@
         "x-latency-category": "responsive"
       }
     },
-    "/wireguard_peers/{id}/config": {
+    "/v2/wireguard_peers/{id}/config": {
       "get": {
         "summary": "Retrieve Wireguard config template for Peer",
         "description": "Retrieve Wireguard config template for Peer",
@@ -61748,16 +61863,15 @@
           "private_key",
           "server_key",
           "alias",
-          "type",
-          "record_type",
-          "created_at",
-          "updated_at"
+          "type"
         ],
         "properties": {
           "id": {
-            "description": "Unique identifier of a push credential",
             "type": "string",
-            "example": "0ccc7b54-4df3-4bcb-a65a-3da1ecc997d7"
+            "format": "uuid",
+            "description": "Identifies the resource.",
+            "readOnly": true,
+            "example": "6a09cdc3-8948-47f0-aa62-74ac943d6c58"
           },
           "certificate": {
             "description": "Apple certificate for sending push notifications. For iOS only",
@@ -64243,7 +64357,7 @@
           },
           "tracking_url": {
             "type": "string",
-            "format": "url",
+            "format": "http://www.example.com/",
             "description": "The URL used to get tracking information about the order.",
             "example": "http://www.example.com/"
           },
@@ -66265,6 +66379,7 @@
         "description": "A phone number"
       },
       "TFVerificationRequest": {
+        
         "title": "VerificationRequest",
         "required": [
           "businessName",
@@ -70295,7 +70410,7 @@
             "maxLength": 2083,
             "minLength": 1,
             "type": "string",
-            "format": "uri"
+            "format": "http://www.example.com/"
           }
         }
       },
@@ -70912,183 +71027,191 @@
       "VerificationRequestStatus": {
         "title": "VerificationRequestStatus",
         "required": [
-          "businessName",
-          "corporateWebsite",
-          "businessAddr1",
-          "businessCity",
-          "businessState",
-          "businessZip",
-          "businessContactFirstName",
-          "businessContactLastName",
-          "businessContactEmail",
-          "businessContactPhone",
-          "messageVolume",
-          "phoneNumbers",
-          "useCase",
-          "useCaseSummary",
-          "productionMessageContent",
-          "optInWorkflow",
-          "optInWorkflowImageURLs",
-          "additionalInformation",
-          "isvReseller",
-          "id",
-          "verificationStatus"
+          "data"
         ],
         "type": "object",
         "properties": {
-          "businessName": {
-            "title": "Businessname",
-            "type": "string",
-            "example": "Telnyx LLC"
-          },
-          "corporateWebsite": {
-            "title": "Corporatewebsite",
-            "type": "string",
-            "example": "http://example.com"
-          },
-          "businessAddr1": {
-            "title": "Businessaddr1",
-            "type": "string",
-            "example": "311 W Superior St"
-          },
-          "businessAddr2": {
-            "title": "Businessaddr2",
-            "type": "string",
-            "example": "121 W Superior St"
-          },
-          "businessCity": {
-            "title": "Businesscity",
-            "type": "string",
-            "example": "Chicago"
-          },
-          "businessState": {
-            "title": "Businessstate",
-            "type": "string",
-            "example": "Illinois"
-          },
-          "businessZip": {
-            "title": "Businesszip",
-            "type": "string",
-            "example": "60654"
-          },
-          "businessContactFirstName": {
-            "title": "Businesscontactfirstname",
-            "type": "string",
-            "example": "John"
-          },
-          "businessContactLastName": {
-            "title": "Businesscontactlastname",
-            "type": "string",
-            "example": "Doe"
-          },
-          "businessContactEmail": {
-            "title": "Businesscontactemail",
-            "type": "string",
-            "example": "email@example.com"
-          },
-          "businessContactPhone": {
-            "title": "Businesscontactphone",
-            "type": "string",
-            "example": "+18889809750"
-          },
-          "messageVolume": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/Volume"
-              }
+          "data": {
+            "required": [
+              "businessName",
+              "corporateWebsite",
+              "businessAddr1",
+              "businessCity",
+              "businessState",
+              "businessZip",
+              "businessContactFirstName",
+              "businessContactLastName",
+              "businessContactEmail",
+              "businessContactPhone",
+              "messageVolume",
+              "phoneNumbers",
+              "useCase",
+              "useCaseSummary",
+              "productionMessageContent",
+              "optInWorkflow",
+              "optInWorkflowImageURLs",
+              "additionalInformation",
+              "isvReseller",
+              "id",
+              "verificationStatus"
             ],
-            "description": "One of the following exact values: 10; 100; 1,000; 10,000; 100,000; 250,000; 500,000; 750,000; 1,000,000; 5,000,000; 10,000,000+",
-            "example": "100,000"
-          },
-          "phoneNumbers": {
-            "title": "Phonenumbers",
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/TFPhoneNumber"
-            },
-            "example": [
-              {
-                "phoneNumber": "+18773554398"
+            "type": "object",
+            "properties": {
+              "businessName": {
+                "title": "Businessname",
+                "type": "string",
+                "example": "Telnyx LLC"
               },
-              {
-                "phoneNumber": "+18773554399"
-              }
-            ]
-          },
-          "useCase": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/UseCaseCategories"
-              }
-            ],
-            "example": "2FA"
-          },
-          "useCaseSummary": {
-            "title": "Usecasesummary",
-            "type": "string",
-            "example": "This is a use case where Telnyx sends out 2FA codes to portal users to verify their identity in order to sign into the portal"
-          },
-          "productionMessageContent": {
-            "title": "Productionmessagecontent",
-            "type": "string",
-            "example": "Your Telnyx OTP is XXXX"
-          },
-          "optInWorkflow": {
-            "title": "Optinworkflow",
-            "type": "string",
-            "example": "User signs into the Telnyx portal, enters number and is prompted to select whether they want to use 2FA verification for security purposes. If they've opted in a confirmation message is sent out to the handset"
-          },
-          "optInWorkflowImageURLs": {
-            "title": "Optinworkflowimageurls",
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Url"
-            },
-            "example": [
-              {
-                "url": "https://telnyx.com/sign-up"
+              "corporateWebsite": {
+                "title": "Corporatewebsite",
+                "type": "string",
+                "example": "http://example.com"
               },
-              {
-                "url": "https://telnyx.com/company/data-privacy"
+              "businessAddr1": {
+                "title": "Businessaddr1",
+                "type": "string",
+                "example": "311 W Superior St"
+              },
+              "businessAddr2": {
+                "title": "Businessaddr2",
+                "type": "string",
+                "example": "121 W Superior St"
+              },
+              "businessCity": {
+                "title": "Businesscity",
+                "type": "string",
+                "example": "Chicago"
+              },
+              "businessState": {
+                "title": "Businessstate",
+                "type": "string",
+                "example": "Illinois"
+              },
+              "businessZip": {
+                "title": "Businesszip",
+                "type": "string",
+                "example": "60654"
+              },
+              "businessContactFirstName": {
+                "title": "Businesscontactfirstname",
+                "type": "string",
+                "example": "John"
+              },
+              "businessContactLastName": {
+                "title": "Businesscontactlastname",
+                "type": "string",
+                "example": "Doe"
+              },
+              "businessContactEmail": {
+                "title": "Businesscontactemail",
+                "type": "string",
+                "example": "email@example.com"
+              },
+              "businessContactPhone": {
+                "title": "Businesscontactphone",
+                "type": "string",
+                "example": "+18889809750"
+              },
+              "messageVolume": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Volume"
+                  }
+                ],
+                "description": "One of the following exact values: 10; 100; 1,000; 10,000; 100,000; 250,000; 500,000; 750,000; 1,000,000; 5,000,000; 10,000,000+",
+                "example": "100,000"
+              },
+              "phoneNumbers": {
+                "title": "Phonenumbers",
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/TFPhoneNumber"
+                },
+                "example": [
+                  {
+                    "phoneNumber": "+18773554398"
+                  },
+                  {
+                    "phoneNumber": "+18773554399"
+                  }
+                ]
+              },
+              "useCase": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/UseCaseCategories"
+                  }
+                ],
+                "example": "2FA"
+              },
+              "useCaseSummary": {
+                "title": "Usecasesummary",
+                "type": "string",
+                "example": "This is a use case where Telnyx sends out 2FA codes to portal users to verify their identity in order to sign into the portal"
+              },
+              "productionMessageContent": {
+                "title": "Productionmessagecontent",
+                "type": "string",
+                "example": "Your Telnyx OTP is XXXX"
+              },
+              "optInWorkflow": {
+                "title": "Optinworkflow",
+                "type": "string",
+                "example": "User signs into the Telnyx portal, enters number and is prompted to select whether they want to use 2FA verification for security purposes. If they've opted in a confirmation message is sent out to the handset"
+              },
+              "optInWorkflowImageURLs": {
+                "title": "Optinworkflowimageurls",
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Url"
+                },
+                "example": [
+                  {
+                    "url": "https://telnyx.com/sign-up"
+                  },
+                  {
+                    "url": "https://telnyx.com/company/data-privacy"
+                  }
+                ]
+              },
+              "additionalInformation": {
+                "title": "Additionalinformation",
+                "type": "string",
+                "example": "This is for security purposes, blah blah blah"
+              },
+              "isvReseller": {
+                "title": "Isvreseller",
+                "type": "string",
+                "example": "Yes"
+              },
+              "webhookUrl": {
+                "title": "Webhookurl",
+                "type": "string",
+                "example": "http://example-webhook.com"
+              },
+              "id": {
+                "title": "Id",
+                "type": "string",
+                "format": "uuid",
+                "example": "eaba9f52-164e-58e0-b002-4f668e18b7ed"
+              },
+              "verificationStatus": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/TFVerificationStatus"
+                  }
+                ],
+                "example": "Pending Customer Feedback"
+              },
+              "reason": {
+                "title": "Reason",
+                "type": "string",
+                "example": "Unfortunately, we have to cancel this request as we do not support non tollfree US numbers."
               }
-            ]
-          },
-          "additionalInformation": {
-            "title": "Additionalinformation",
-            "type": "string",
-            "example": "This is for security purposes, blah blah blah"
-          },
-          "isvReseller": {
-            "title": "Isvreseller",
-            "type": "string",
-            "example": "Yes"
-          },
-          "webhookUrl": {
-            "title": "Webhookurl",
-            "type": "string",
-            "example": "http://example-webhook.com"
-          },
-          "id": {
-            "title": "Id",
-            "type": "string",
-            "format": "uuid",
-            "example": "eaba9f52-164e-58e0-b002-4f668e18b7ed"
-          },
-          "verificationStatus": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/TFVerificationStatus"
-              }
-            ],
-            "example": "Pending Customer Feedback"
-          },
-          "reason": {
-            "title": "Reason",
-            "type": "string",
-            "example": "Unfortunately, we have to cancel this request as we do not support non tollfree US numbers."
+            },
+            "description": "A verification request and its status, suitable for returning to users"
           }
-        },
-        "description": "A verification request and its status, suitable for returning to users"
+        }
       },
       "VerificationStatus": {
         "title": "VerificationStatus",
@@ -72129,7 +72252,7 @@
         "title": "Webhook Event Failover URL",
         "description": "The failover URL where webhooks related to this connection will be sent if sending to the primary URL fails. Must include a scheme, such as 'https'.",
         "type": "string",
-        "format": "url",
+        "format": "https://failover.example.com",
         "default": "",
         "nullable": true,
         "example": "https://failover.example.com"
